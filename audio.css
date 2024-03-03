@@ -1,0 +1,468 @@
+body {
+    background-color: rgb(22, 22, 22);
+}
+
+#flex_box {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+#scene_window {
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    height: 600px;
+    margin: 50px auto;
+}
+
+#edit_window {
+    width: 100%;
+    margin: auto;
+}
+
+.file_cont {
+    margin-right: 20px;
+    border: 1px solid rgb(73, 73, 73);
+}
+
+#file_list_box {
+    width: 400px;
+    height: 350px;
+    overflow-y: scroll;
+    background-color: rgb(53, 53, 53);
+}
+
+#file_list_box::-webkit-scrollbar {
+    width: 7px;
+}
+
+#file_list_box::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 10px;
+}
+
+#file_list_box::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, 0.1);
+}
+
+#file_list_box::-webkit-scrollbar-corner {
+    display: none;
+}
+
+@media (max-width: 1500px) {
+    .edit_cont {
+        width: 850px;
+    }
+
+    #option_bar {
+        width: 850px;
+    }
+
+    #edit_box {
+        width: 850px;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 2000px) {
+    .edit_cont {
+        width: 1000px;
+    }
+
+    #option_bar {
+        width: 1000px;
+    }
+
+    #edit_box {
+        width: 1000px;
+    }
+}
+
+@media (min-width: 2001px) {
+    .edit_cont {
+        width: 1400px;
+    }
+
+    #option_bar {
+        width: 1400px;
+    }
+
+    #edit_box {
+        width: 1400px;
+    }
+}
+
+.edit_cont {
+    border: 1px solid rgb(73, 73, 73);
+}
+
+#option_bar {
+    display: flex;
+    background-color: rgb(59, 59, 59);
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.option_bunch {
+    display: flex;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 2%;
+    margin-right: 10px;
+}
+
+#option_bar button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(223, 223, 223);
+    border-radius: 10%;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+#option_bar button:hover {
+    border: 2px solid rgb(109, 155, 155);
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+}
+
+#init_button {
+    font-size: 25px;
+}
+
+#play_button {
+    font-size: 25px;
+}
+
+#time_add_box {
+    font-size: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#time_input {
+    background-color: rgb(231, 231, 231);
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: 16px;
+    width: 35px;
+    height: 20px;
+    text-align: right;
+}
+
+#recording {
+    border: 1px solid red;
+}
+
+#edit_box {
+    display: flex;
+    overflow: scroll;
+    height: 350px;
+    background-color: rgb(53, 53, 53);
+}
+
+#edit_box::-webkit-scrollbar {
+    width: 7px;
+    height: 8px;
+}
+
+#edit_box::-webkit-scrollbar-thumb {
+    background: #919191;
+    border-radius: 10px;
+}
+
+#edit_box::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, 0.1);
+}
+
+#edit_box::-webkit-scrollbar-corner {
+    display: none;
+}
+
+#ratio {
+    margin-right: 15px;
+    appearance: none;
+    background-color: rgb(59, 59, 59);
+}
+
+#ratio::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #8a8a8a;
+}
+
+#ratio::-webkit-slider-thumb {
+    border: 1px solid #9c9c9c;
+    height: 17px;
+    width: 12px;
+    background: #383838;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px; /*chrome의 경우 margin-top값을 부여해야합니다.*/
+}
+
+#track_option {
+    width: 100px;
+}
+
+#track_cont {
+    position: relative;
+}
+
+#track_cont .selected {
+    background-color: #424242;
+}
+
+#time_shower {
+    background-color: rgb(53, 53, 53);
+    width: 100px;
+    height: 50px;
+    border-bottom: 3px solid gray;
+}
+
+#time_line_box {
+    display: flex;
+}
+
+#time_line {
+    overflow: hidden;
+    position: relative;
+    width: 0px;
+    height: 50px;
+    background-color: rgb(53, 53, 53);
+    border-bottom: 3px solid gray;
+}
+
+#time_stick {
+    position: absolute;
+    z-index: 3;
+    background-color: rgb(242, 255, 53);
+    width: 2px;
+}
+
+.time_label {
+    color: white;
+    pointer-events: none;
+    position: absolute;
+    font-size: 10px;
+    top: 5px;
+}
+
+.stick_label {
+    color: white;
+    pointer-events: none;
+    position: absolute;
+    font-size: 10px;
+    bottom: 0;
+}
+
+.sound_box {
+    position: relative;
+    border-bottom: 3px solid gray;
+    display: flex;
+    height: 97px;
+}
+
+.wave_box {
+    display: flex;
+}
+
+#drag_box {
+    position: absolute;
+    height: 100px;
+}
+
+.wave_bar {
+    cursor: pointer;
+    position: absolute;
+    height: 97px;
+    border-right: 1px solid rgb(145, 65, 65);
+    border-left: 1px solid rgb(145, 65, 65);
+    background-color: rgb(55, 99, 128);
+    z-index: 1;
+}
+
+#selected_bar {
+    z-index: 2;
+    position: absolute;
+    height: 95px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#drag_area {
+    z-index: 10;
+    position: absolute;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#drag_space {
+    position: absolute;
+    height: 100px;
+}
+
+#option_modal {
+    text-align: center;
+    background-color: #313131; /* set background color */
+    border: 1px solid #979797; /* add border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add box shadow */
+    position: absolute; /* set position to absolute */
+    z-index: 999; /* set z-index */
+    min-width: 70px;
+}
+
+.ind_option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(219, 219, 219);
+    width: 140px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.ind_option:hover {
+    background-color: rgb(37, 77, 87);
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.gain {
+    background-color: #313131;
+    overflow: hidden;
+    appearance: none;
+    border-bottom: 10px solid gray;
+}
+
+.gain::-webkit-slider-runnable-track {
+    background-color: rgb(180, 180, 180);
+    margin-top: -1px;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.gain::-webkit-slider-thumb {
+    box-shadow: -80px 0 0 80px #388bf7;
+    -webkit-appearance: none;
+    border: 1px solid rgb(221, 221, 221);
+    height: 18px;
+    width: 10px;
+    border-radius: 30%;
+    background: #eb1e1e;
+    cursor: pointer;
+    margin-top: -4px; /*chrome의 경우 margin-top값을 부여해야합니다.*/
+}
+
+.track_play_button {
+    height: 100px;
+    width: 100px;
+    border-bottom: 3px solid gray;
+    cursor: pointer;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    font-size: 35px;
+}
+
+#file {
+    display: none;
+}
+
+.file_add {
+    height: 73px;
+    background-color: rgb(59, 59, 59);
+}
+
+.file_add label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(218, 218, 218);
+    font-size: 20px;
+    height: 73px;
+    cursor: pointer;
+}
+
+.file_add label:hover {
+    color: rgb(255, 255, 255);
+}
+
+.file_shower_box {
+    float: left;
+    height: 150px;
+    margin: 20px;
+    border: 3px solid rgb(168, 168, 168);
+}
+
+.img_shower {
+    height: 120px;
+    width: 140px;
+    background-color: rgb(240, 240, 240);
+    background-image: url("audio/soundImg.png");
+    background-size: cover;
+}
+
+.name_shower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    color: white;
+    font-size: small;
+    height: 30px;
+    width: 140px;
+    background-color: rgb(95, 95, 95);
+}
+
+#scene-option-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.scene-option-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.scene-option-button {
+    width: 220px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(218, 218, 218);
+    font-family: "NanumBarunpen";
+}
+
+.scene-option-button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+footer {
+    height: 50px;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="/reset.css" />
+        <link rel="stylesheet" href="/audio.css" />
+        <link rel="stylesheet" href="/audio.css" />
+    </head>
+    <body>
+        <div id="scene_window"></div>
+        <div class="flex">
+            <button>재생하기</button>
+        </div>
+        <div id="edit_window">
+            <div id="flex_box">
+                <div class="file_cont">
+                    <div class="file_add">
+                        <label for="file">Add New Sound File</label>
+                        <input id="file" name="file" type="file" />
+                    </div>
+                    <div id="file_list_box"></div>
+                </div>
+                <div class="edit_cont">
+                    <div id="option_bar">
+                        <input
+                            type="range"
+                            id="ratio"
+                            min="8"
+                            max="70"
+                            step="2"
+                            value="8"
+                        />
+
+                        <div class="option_bunch">
+                            <button id="play_button" style="line-height: 0">
+                                ▶
+                            </button>
+                            <button id="init_button">
+                                <img class="icon" src="audio/resetImg.png" />
+                            </button>
+                            <button id="record_button">
+                                <img class="icon" src="audio/recordImg.png" />
+                            </button>
+                        </div>
+                        <div class="option_bunch">
+                            <button id="cut_button">
+                                <img
+                                    class="icon"
+                                    style="width: 15px; height: 25px"
+                                    src="audio/cutImg.png"
+                                />
+                            </button>
+                            <button id="delete_button">
+                                <img
+                                    class="icon"
+                                    style="width: 17px; height: 23px"
+                                    src="audio/eraseImg.png"
+                                />
+                            </button>
+                            <button id="undo_button">
+                                <img class="icon" src="audio/undoImg.png" />
+                            </button>
+                            <button id="redo_button">
+                                <img class="icon" src="audio/redoImg.png" />
+                            </button>
+                        </div>
+                        <div class="option_bunch">
+                            <div id="time_add_box">
+                                <input
+                                    type="text"
+                                    id="time_input"
+                                    maxlength="4"
+                                    value="0"
+                                />
+                                <button id="time_add_button">
+                                    <img
+                                        class="icon"
+                                        style="width: 30px; height: 30px"
+                                        src="audio/timeLineImg.png"
+                                    />
+                                </button>
+                                <button id="track_add_button">
+                                    <img class="icon" src="audio/addImg.png" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option_bunch">
+                            <button button id="download_button">
+                                <img
+                                    class="icon"
+                                    style="width: 20px; height: 20px"
+                                    src="audio/downloadImg.png"
+                                />
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="edit_box">
+                        <div id="track_option">
+                            <div id="time_shower"></div>
+                        </div>
+                        <div id="track_cont">
+                            <div id="time_line_box">
+                                <div id="time_line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scene-option-cont">
+            <div class="scene-option-box">
+                <button class="prev-scene-button scene-option-button">
+                    이전 장면
+                </button>
+                <button class="redirect-work-button scene-option-button">
+                    장면 편집 화면
+                </button>
+                <button class="save-button scene-option-button">
+                    저장하기
+                </button>
+                <button class="next-scene-button scene-option-button">
+                    다음 장면
+                </button>
+            </div>
+        </div>
+        <footer></footer>
+
+        <script type="module" src="/audio.js"></script>
+    </body>
+</html>
